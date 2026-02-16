@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Resources - StudentCircle</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/resources.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                🌱 StudentCircle
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="rides.html">Rides</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Resource Sharing</h1>
+            <p>Share unused items with your campus community</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="resources-layout">
+            
+            <!-- Add Item Form Section -->
+            <section class="add-item-section">
+                <h2>Share an Item</h2>
+                <form id="addItemForm" class="item-form">
+                    
+                    <div class="form-group">
+                        <label for="itemName">Item Name *</label>
+                        <input 
+                            type="text" 
+                            id="itemName" 
+                            name="itemName" 
+                            placeholder="e.g., Mountain Bike, Kettle, Chemistry Textbook"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category *</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Cycles">Cycles</option>
+                            <option value="Books">Books</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Kitchen">Kitchen Appliances</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Sports">Sports Equipment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description *</label>
+                        <textarea 
+                            id="description" 
+                            name="description" 
+                            placeholder="Describe the condition, age, and any important details..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="availability">Availability *</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Select availability</option>
+                                <option value="Available">Available Now</option>
+                                <option value="Reserved">Reserved</option>
+                                <option value="Unavailable">Not Available</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Price (₹)</label>
+                            <input 
+                                type="number" 
+                                id="price" 
+                                name="price" 
+                                placeholder="0 for free"
+                                min="0"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input 
+                            type="text" 
+                            id="location" 
+                            name="location" 
+                            placeholder="e.g., Hostel A, Room 302"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Item Image</label>
+                        <input 
+                            type="file" 
+                            id="image" 
+                            name="image" 
+                            accept="image/*"
+                        >
+                        <small>Optional: Upload a photo of your item</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Share Item
+                    </button>
+                </form>
+            </section>
+
+            <!-- Items Listing Section -->
+            <section class="items-listing-section">
+                <div class="listing-header">
+                    <h2>Available Resources</h2>
+                    
+                    <!-- Search and Filter -->
+                    <div class="search-filter-bar">
+                        <input 
+                            type="text" 
+                            id="searchBar" 
+                            class="search-input" 
+                            placeholder="🔍 Search items..."
+                        >
+                        
+                        <select id="categoryFilter" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="Cycles">Cycles</option>
+                            <option value="Books">Books</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Kitchen">Kitchen Appliances</option>
+                            <option value="Furniture">Furniture</option>
+                            <option value="Sports">Sports Equipment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Items Grid -->
+                <div id="itemsGrid" class="items-grid">
+                    <!-- Items will be dynamically inserted here by JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-icon">📦</div>
+                    <p>No items found</p>
+                    <small>Try adjusting your search or filter</small>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 StudentCircle. Built for a sustainable campus.</p>
+            <p>Share More. Waste Less. 🌱</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/resources.js"></script>
+</body>
+</html>
