@@ -27,8 +27,8 @@ StudentCircle/
 
 ## Team
 
-Frontend: [Vansh Kharb] (https://github.com/VanshKharb)
-Backend: [Kushpinder Singh] (https://github.com/piratehunter-zoro1999)
+**Frontend:** [Vansh Kharb](https://github.com/VanshKharb)  
+**Backend:** [Kushpinder Singh](https://github.com/piratehunter-zoro1999)
 
 ---
 
